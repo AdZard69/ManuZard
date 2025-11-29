@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-bg-dark: #0b0c10;
+  --color-bg-panel: #1f2833;
+  --color-primary: #66fcf1;
+  --color-secondary: #45a29e;
+  --color-accent: #ffcc00; /* Safety Yellow */
+  --color-text-main: #c5c6c7;
+  --color-text-bright: #ffffff;
+  --color-danger: #ff4d4d;
+
+  /* Fonts */
+  --font-main: 'Inter', sans-serif;
+  --font-tech: 'Rajdhani', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Borders & Effects */
+  --border-tech: 1px solid var(--color-secondary);
+  --glow-primary: 0 0 10px rgba(102, 252, 241, 0.3);
+  --glow-text: 0 0 5px rgba(102, 252, 241, 0.5);
+  --panel-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Grid Background Pattern */
+  background-image: 
+    linear-gradient(rgba(102, 252, 241, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 252, 241, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Responsive background pattern */
+@media (max-width: 768px) {
+  body {
+    background-size: 30px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 20px 20px;
+  }
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-text-bright);
+  text-shadow: var(--glow-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-tech);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-bright);
+}
+
+button {
+  border-radius: 2px; /* Tech look */
+  border: 1px solid var(--color-primary);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: var(--font-tech);
+  background: rgba(102, 252, 241, 0.1);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation; /* Better touch handling */
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
+button:hover {
+  background: rgba(102, 252, 241, 0.2);
+  box-shadow: var(--glow-primary);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+  border-left: 1px solid var(--color-bg-panel);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
